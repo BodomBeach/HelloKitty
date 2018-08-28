@@ -1,0 +1,7 @@
+.shop-grid-item a:hover {
+  background-color: transparent;
+}
+
+.pagination {
+  justify-content: center;
+}
