@@ -18,9 +18,12 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
+   UserMailer.order_email(params[:stripeEmail]).deliver_now!
+   UserMailer.admin_order_email(params[:stripeEmail],@amount).deliver_now!
+  
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
   end
-  UserMailer.order_email(params[:stripeEmail]).deliver_now!
+
 end
