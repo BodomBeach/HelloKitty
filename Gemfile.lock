@@ -143,10 +143,7 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    pg (1.1.1)
-    pry (0.11.3)
-      coderay (~> 1.1.0)
-      method_source (~> 0.9.0)
+    pg (1.1.2)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
@@ -215,7 +212,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    stripe (3.24.0)
+    stripe (3.25.0)
       faraday (~> 0.10)
     thor (0.20.0)
     thread_safe (0.3.6)
@@ -263,8 +260,12 @@ DEPENDENCIES
   letter_opener
   listen (>= 3.0.5, < 3.2)
   mailjet
+<<<<<<< HEAD
   pg (>= 0.18, < 2.0)
   pry
+=======
+  pg (>= 1.1.1, < 2.0)
+>>>>>>> supermailer
   puma (~> 3.11)
   rails (~> 5.2.0)
   sass-rails
