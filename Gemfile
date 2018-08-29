@@ -17,6 +17,8 @@ gem 'will_paginate-bootstrap4'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
