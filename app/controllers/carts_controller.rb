@@ -12,6 +12,12 @@ class CartsController < ApplicationController
     redirect_to items_path
   end
 
+  def remove_item
+    get_cart
+    @cart.items.delete(Item.find(params[:id]).first)
+    redirect_to cart_show_path
+  end
+
   def total_price
     @cart.items.to_a.sum { |item| item.price }
   end

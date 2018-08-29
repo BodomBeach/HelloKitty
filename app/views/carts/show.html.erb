@@ -7,8 +7,9 @@
     There are no items in your cart
   </p>
 <% else %>
-  <% @cart.items.each do |i| %>
-    <p>Name:<%= i.title %>, <br> Price:<%= i.price %>,</p><br>
+  <% @cart.items.each do |item| %>
+    <p>Name:<%= item.title %>, <br> Price:<%= item.price %>,</p>
+    <%= link_to "Remove item", remove_item_path(id: item.id), :method=> :post %>
   <% end %>
    <h3>Total:<%= @total_price %></h3>
 <% end %>
