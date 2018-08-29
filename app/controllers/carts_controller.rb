@@ -1,28 +1,35 @@
 class CartsController < ApplicationController
   def show
-    @cart = current_cart
+    get_cart
     @total_price = total_price
   end
 
   def add_item
-    @cart = current_cart
-    @cart << Item.find(params[:id])
+
+    get_cart
+    @cart.items << Item.find(params[:id])
     flash.now[:notice] = "Item added to your cart"
-    items_path
+    redirect_to items_path
+  end
+
+  def remove_item
+    get_cart
+    @cart.items.delete(Item.find(params[:id]).first)
+    redirect_to cart_show_path
   end
 
   def total_price
-    @cart = current_cart
     @cart.items.to_a.sum { |item| item.price }
   end
 
   private
 
-  def current_cart
-    if Cart.find_by user_id: current_user.id
-      Cart.find_by user_id: current_user.id
+  def get_cart
+    if user_signed_in? && !current_user.cart.nil?
+      @cart = current_user.cart
+      session[:cart_id] = current_user.cart.id
     else
-      Cart.create(user_id: current_user.id)
+      @cart = current_cart
     end
   end
 
