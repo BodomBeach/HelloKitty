@@ -1,20 +1,16 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+gem 'dotenv-rails', groups: [:development, :test]
 ruby '2.5.1'
 
+gem 'mailjet'
 gem 'rails', '~> 5.2.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
-
-# Use Faker to create a DB
 gem 'faker'
-# Use will_paginate with boostrap styling
 gem 'will_paginate-bootstrap4'
-# Use CoffeeScript for .coffee assets and views
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Use SCSS for stylesheets
@@ -30,6 +26,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
 end
 
 group :test do

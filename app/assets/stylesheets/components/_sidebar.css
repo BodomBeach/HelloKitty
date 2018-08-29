@@ -1,0 +1,9 @@
+.avatar {
+  width: 150px;
+  border: 1px solid #1B1C18;
+  border-radius: 50px;
+}
+
+.list-group .list-group-item {
+  background-color: transparent;
+}

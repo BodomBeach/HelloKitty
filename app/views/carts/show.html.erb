@@ -1,0 +1,17 @@
+<h1>Carts#show</h1>
+<p>Find me in app/views/carts/show.html.erb</p>
+
+<% if current_user.cart.items.size == 0 %>
+
+  <p>
+    There are no items in your cart
+  </p>
+<% else %>
+  <% @cart.items.each do |i| %>
+    <p>Name:<%= i.title %>, <br> Price:<%= i.price %>,</p><br>
+  <% end %>
+   <h3>Total:<%= @total_price %></h3>
+<% end %>
+
+<%= link_to "Return to shop", items_path %>
+<%= link_to "signout", destroy_user_session_path, method: :delete %>

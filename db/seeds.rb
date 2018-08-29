@@ -15,6 +15,6 @@ i = 1
   Item.create(title: Faker::Cat.breed,
               description: Faker::ChuckNorris.fact,
               price: Faker::Number.decimal(3, 2),
-              image_url: ("https://loremflickr.com/500/600/cat?lock=#{i}"))
+              image_url: ("https://loremflickr.com/640/427/cat?lock=#{i}"))
   i += 1
 end

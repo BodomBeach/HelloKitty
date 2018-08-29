@@ -1,29 +1,33 @@
 <!-- Shop Grid-->
 <section class="module" id="items">
-    <div class="container">
-        <div class="row">
-            <% @items.each do |item| %>
-            <div class="col-md-4">
-                <div class="shop-grid-item">
-                    <div class="shop-item-thumb"><a href="<%= item_path(item.id) %>"><img src="<%= item.image_url %>"></a>
-                        <div class="shop-item-hidden"><a class="btn btn-new-white" href="#">Add to cart</a></div>
-                    </div>
-                    <div class="shop-item-captions">
-                        <h6 class="shop-item-title"><%= item.title %></h6><span class="shop-item-price">$<%= item.price %></span>
-                    </div>
-
-                </div>
+  <div class="container">
+    <div class="row">
+      <% @items.each do |item| %>
+        <div class="col-md-4">
+          <div class="shop-grid-item">
+            <div class="shop-item-thumb"><a href="<%= item_path(item.id) %>"><img src="<%= item.image_url %>"></a>
+              <div class="shop-item-hidden"><a class="btn btn-new-white" href="#">Add to cart</a>
+              </div>
             </div>
-        <% end %>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="space" data-MY="40px"></div>
+            <div class="shop-item-captions">
+              <h6 class="shop-item-title"><%= item.title %></h6><span class="shop-item-price">$<%= item.price %></span>
             </div>
+          </div>
         </div>
-
-        <%= will_paginate @items %>
-
+      <% end %>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="space" data-MY="40px"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= will_paginate @items %>
+        </div>
+      </div>
+
+  </div>
 </section>
 <!-- Shop Grid end-->

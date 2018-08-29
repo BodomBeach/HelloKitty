@@ -23,14 +23,14 @@
   </head>
 
   <body>
-    <%= render 'shared/preloader' %>
-    <%= render 'shared/header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
 
     <!-- Wrapper-->
     <div class="wrapper">
+    <%= render 'shared/header' %>
+    <%= render 'shared/error'  %>
     <%= yield %>
+    <%= render 'items/components/sidebar' %>
     <%= render 'shared/footer' %>
     </div>
     <!-- Wrapper end-->

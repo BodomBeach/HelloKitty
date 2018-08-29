@@ -1,0 +1,7 @@
+puts "tamere"
+puts "tamere"
+puts "tamere"
+puts "tamere"
+puts "tamere"
+puts "tamere"
+puts "tamere"

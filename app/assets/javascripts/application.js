@@ -13,7 +13,10 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery3
+//= require jquery_ujs
 //= require_tree .
+
 
 //= require bootstrap/js/bootstrap.min
 
@@ -22,7 +25,8 @@
 //= require boomerang/js/plugins.min
 //= require boomerang/js/custom.min
 
-$(document).ready() {
+
+$(document).ready(function() {
    $(function(){
      $('.pagination a').attr('data-remote', 'true')
    });
@@ -30,4 +34,4 @@ $(document).ready() {
   $("#items").html('<%=  escape_javascript(render :partial => 'components/cards_item') %>');
   $('.pagination a').attr('data-remote', 'true');
 
-};
+});

@@ -1,0 +1,11 @@
+.shop-item-thumb a:hover {
+  background-color: transparent;
+}
+
+.shop-item-hidden a:hover {
+  background-color: rgba(200, 200, 200, 0.8);
+}
+
+.pagination {
+  justify-content: center;
+}
