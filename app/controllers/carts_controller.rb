@@ -14,7 +14,7 @@ class CartsController < ApplicationController
 
   def remove_item
     get_cart
-    @cart.items.delete(Item.find(params[:id]).first)
+    @cart.items.delete(Item.find(params[:id]))
     redirect_to cart_show_path
   end
 
