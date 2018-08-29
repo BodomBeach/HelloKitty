@@ -260,12 +260,8 @@ DEPENDENCIES
   letter_opener
   listen (>= 3.0.5, < 3.2)
   mailjet
-<<<<<<< HEAD
   pg (>= 0.18, < 2.0)
   pry
-=======
-  pg (>= 1.1.1, < 2.0)
->>>>>>> supermailer
   puma (~> 3.11)
   rails (~> 5.2.0)
   sass-rails
