@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 gem 'mailjet'
 gem 'rails', '~> 5.2.0'
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '~> 1.1.2'
 gem 'puma', '~> 3.11'
 gem 'uglifier', '>= 1.3.0'
 gem 'faker'

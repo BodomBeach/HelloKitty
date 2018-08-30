@@ -5,9 +5,9 @@ class CartsController < ApplicationController
   end
 
   def add_item
-
     get_cart
     @cart.items << Item.find(params[:id])
+
     flash.now[:notice] = "Item added to your cart"
     redirect_to items_path
   end
