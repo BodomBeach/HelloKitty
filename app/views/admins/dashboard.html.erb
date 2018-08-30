@@ -55,20 +55,3 @@
     </div>
   </div>
 </section>
-
-<br><br><br><br>
-
-<h1>CODE NICO :</h1>
-
-<% @orders.each do |order| %>
-  <h3><%= order.user.email %></h3><br>
-  <h3><%= order.created_at %></h3><br>
-  <% order.items.each do |item| %>
-    Title:
-    <%= item.title %><br>
-    Price:
-    <%= item.price %><br>
-  <% end %><br>
-  Total:
-  <%= order.total_price %>
-<% end %>

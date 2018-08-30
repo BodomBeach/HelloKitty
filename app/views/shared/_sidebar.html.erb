@@ -1,7 +1,7 @@
 <!-- Off canvas-->
 <div class="off-canvas-sidebar">
   <div class="off-canvas-sidebar-wrapper">
-    <div class="off-canvas-header"><a class="off-canvas-close" href="#"><span class="ti-close"></span></a></div>
+    <div class="off-canvas-header"><a class="off-canvas-close" href="#"><span class="fas fa-times"></span></a></div>
       <div class="off-canvas-content">
         <!-- Text widget-->
         <aside class="widget widget-text">
@@ -21,8 +21,8 @@
                   </div>
                <% else %>
                  <div class="list-group">
-                    <%= link_to "Log in", new_user_session_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
-                    <%= link_to "Sign up", new_user_registration_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
+                    <%= link_to "Log in", new_session_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
+                    <%= link_to "Sign up", new_registration_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
                   </div>
                 <% end %>
               </div>

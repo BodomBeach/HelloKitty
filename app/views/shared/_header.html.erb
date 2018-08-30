@@ -66,7 +66,7 @@
     </div>
     <div class="extra-nav">
         <ul>
-            <li><a class="top-bar-cart" href="<%= cart_show_path %>"><span class="menu-item-span"><i class="ti-shopping-cart"></i>
+            <li><a class="top-bar-cart" href="<%= cart_show_path %>"><span class="menu-item-span"><i class="fas fa-shopping-cart"></i>
                 <% if user_signed_in? %>
                     <span style="font-size: 10px"><%= current_cart.items.size %></span>
                 <% else %>
@@ -75,8 +75,8 @@
                     <% end %>
                 <% end %>
                 </span></a></li>
-            <li><a class="off-canvas-open" href="#"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
-            <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+            <li><a class="off-canvas-open" href="#"><span class="menu-item-span"><i class="fas fa-bars"></i></span></a></li>
+            <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="fas fa-bars"></i></span></a></li>
         </ul>
     </div>
   </div>

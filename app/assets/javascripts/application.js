@@ -23,14 +23,3 @@
 //= require boomerang/js/popper.min
 //= require boomerang/js/plugins.min
 //= require boomerang/js/custom.min
-
-
-$(document).ready(function() {
-   $(function(){
-     $('.pagination a').attr('data-remote', 'true')
-   });
-
-  $("#items").html('<%=  escape_javascript(render :partial => 'components_index/cards_item') %>');
-  $('.pagination a').attr('data-remote', 'true');
-
-});
