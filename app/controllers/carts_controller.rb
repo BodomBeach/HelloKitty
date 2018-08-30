@@ -7,14 +7,13 @@ class CartsController < ApplicationController
   def add_item
     get_cart
     @cart.items << Item.find(params[:id])
-
     flash.now[:notice] = "Item added to your cart"
     redirect_to items_path
   end
 
   def remove_item
     get_cart
-    @cart.items.delete(Item.find(params[:id]))
+    @cart.items.first{ |i| i.id == params[:id] }.destroy
     redirect_to cart_show_path
   end
 
