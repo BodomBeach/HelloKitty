@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AdminsControllerTest < ActionDispatch::IntegrationTest
   test "should get dashboard" do
-    get admins_dashboard_url
+    get '/admin'
     assert_response :success
   end
 
