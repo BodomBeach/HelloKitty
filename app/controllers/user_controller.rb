@@ -1,5 +1,5 @@
 class UserController < ApplicationController
   def profile
-    @cart = current_cart
+    @orders = current_user.orders
   end
 end
