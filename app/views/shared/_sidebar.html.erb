@@ -15,6 +15,9 @@
                     <%= link_to "My orders", profile_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
                     <%= link_to "My settings", edit_user_registration_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
                     <%= link_to "Log out", destroy_user_session_path, method: :delete, class:  "list-group-item list-group-item-action list-group-item-light"%>
+                    <% if current_user.admin? %>
+                      <%= link_to "Admin dashboard", admin_path, class: "list-group-item list-group-item-action list-group-item-light"%>
+                    <% end %>
                   </div>
                <% else %>
                  <div class="list-group">
