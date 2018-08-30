@@ -25,12 +25,14 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'eur'
     )
+
    p @cart
    p "=============================================="
    @cart.items.each do |item|
    p item.image_url
    end
    p "=============================================="
+
 
    UserMailer.order_email(params[:stripeEmail], @cart.items).deliver_now!
    UserMailer.admin_order_email(params[:stripeEmail],@amount_view).deliver_now!
