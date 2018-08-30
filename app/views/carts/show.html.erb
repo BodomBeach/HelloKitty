@@ -111,6 +111,10 @@
   <h3>Total:<%= @total_price %></h3>
 <% end %>
 
+<%# button_to "commander", new_charge_path, method: :get, params: { total: @total_price } %>
+<%= button_to "commander1", order_path, method: :get %>
+
+
 <%= link_to "Return to shop", items_path %>
 <%= link_to "signout", destroy_user_session_path, method: :delete %>
 
