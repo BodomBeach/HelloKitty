@@ -1,14 +1,10 @@
-<section id="cart-show" class="module">
-  <div id="cart-content"class="container">
+<section id="order-show" class="module">
+  <div id="order-content" class="container">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 center">
-        <h1 class="text-center">Shopping Cart</h1>
-      </div>
-    </div>
+        <h1 class="text-center">Your orders</h1>
   </div>
   <br>
-  <div class="container">
+    <div class="container">
     <div class="row">
       <div class="col-md-12 centered">
 
@@ -51,11 +47,6 @@
                   <!-- AJAX I guess so price = item price * nb of items -->
                   <td><%= item.price %> €
                   </td>
-                  <td class="cart-remove">
-                    <a href="#" >
-                      <i class="ti-close"></i>
-                    </a>
-                  </td>
                 </tr>
 
                 <% end %>
@@ -79,41 +70,9 @@
             </tr>
           </tbody>
         </table>
-        <div class="text-right">
-          <a class="btn btn-block-mobile btn-black" href="#">Proceed to checkout</a>
-        </div>
       </div>
     </div>
   </div>
   </div>
+  </div>
 </section>
-
-<!-- <h1>CODE NICO</h1> -->
-<!--
-<% if @cart.items.size == 0 %>
-
-  <p>
-    There are no items in your cart
-  </p>
-<% else %>
-  <% @cart.items.each do |item| %>
-    <p>Name:<%= item.title %>,
-      <br>
-      Price:<%= item.price %>,</p>
-  <% end %>
-
-  <% @cart.items.uniq.each do |item| %>
-    <p>Name:<%= item.title %>, <br> Price:<%= item.price %>,</p><br>
-    <h2><%= link_to "+", add_item_path(id: item.id), :method=> :post %></h2>
-    <h2><%= link_to "-", remove_item_path(id: item.id), :method=> :post %></h2>
-
-  <% end %>
-  <h3>Total:<%= @total_price %></h3>
-<% end %>
-
-<%= link_to "Return to shop", items_path %>
-<%= link_to "signout", destroy_user_session_path, method: :delete %>
-
-<%= link_to "add item 1", add_item_path(id: 1), :method=> :post %>
-<%= link_to "add item 2", add_item_path(id: 2), :method=> :post %>
- -->
