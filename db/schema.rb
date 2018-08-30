@@ -11,7 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2018_08_29_154846) do
+
+
+
+ActiveRecord::Schema.define(version: 2018_08_30_055506) do
+
 
 
 
@@ -74,6 +78,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_154846) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
