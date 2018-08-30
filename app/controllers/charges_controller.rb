@@ -22,5 +22,5 @@ class ChargesController < ApplicationController
     flash[:error] = e.message
     redirect_to new_charge_path
   end
-  UserMailer.order_email(params[:stripeEmail]).deliver_now!
+  #UserMailer.order_email(params[:stripeEmail]).deliver_now!
 end
