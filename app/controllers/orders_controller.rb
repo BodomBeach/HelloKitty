@@ -1,7 +1,12 @@
 class OrdersController < ApplicationController
 
   def new
-	redirect_to new_charge_path
+  	if current_user.nil?
+     redirect_to new_user_registration_path
+     flash[:notice] = "Please sign up to buy cats"
+    else
+	 redirect_to new_charge_path
+    end
   end
 
 
