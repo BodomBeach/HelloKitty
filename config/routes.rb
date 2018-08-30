@@ -19,11 +19,8 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admins#dashboard', as: 'admin'
 
-  devise_scope :user do
-    get 'login', to: 'devise/sessions#new', as: :new_session
-    get 'signup', to: 'devise/registrations#new', as: :new_registration
-  end
   resources :items
   resources :charges
+  devise_for :users
   devise_for :users
 end
