@@ -1,5 +1,87 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<section class="module">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Shopping Cart</h1>
+
+        <form method="post">
+          <div class="table-responsive">
+            <table class="table cart-table">
+              <thead>
+                <tr>
+                  <th class="col-thumbnail">Product</th>
+                  <th class="col-title"></th>
+                  <th class="col-price">Price</th>
+                  <th class="col-quantity">Quantity</th>
+                  <th class="col-subtotal">Total</th>
+                  <th class="col-remove"></th>
+                </tr>
+              </thead>
+              <tbody>
+
+              <% if @cart.items.size == 0 %>
+              <p>
+                There are no items in your cart
+              </p>
+
+              <% else %>
+                <% @cart.items.each do |item| %>
+
+                <tr>
+                  <td>
+                    <a href="#"><img class="cart-thumbnail" src="assets/images/shop/1.jpg" alt=""></a>
+                  </td>
+                  <td>
+                    <h6 class="m-b-0">
+                      <a href="#"><%= item.title %></a>
+                    </h6>
+                  </td>
+                  <td><%= item.price %> €</td>
+                  <td>
+                    <input class="form-control" type="number" step="1" min="1" value="1">
+                  </td>
+                  <!-- AJAX I guess so price = item price * nb of items -->
+                  <td><%= item.price %> €
+                  </td>
+                  <td class="cart-remove">
+                    <a href="#" >
+                      <i class="ti-close"></i>
+                    </a>
+                  </td>
+                </tr>
+
+                <% end %>
+              <% end %>
+
+
+
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row m-t-70">
+      <div class="col-md-12">
+        <table class="table cart-table">
+          <tbody>
+            <tr>
+              <td>Total</td>
+              <td class="text-right"><%= @total_price %> €</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-right">
+          <a class="btn btn-block-mobile btn-black" href="#">Proceed to checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br><br><br>
+
+<h1>CODE NICO</h1>
 
 <% if @cart.items.size == 0 %>
 
@@ -8,10 +90,12 @@
   </p>
 <% else %>
   <% @cart.items.each do |item| %>
-    <p>Name:<%= item.title %>, <br> Price:<%= item.price %>,</p>
+    <p>Name:<%= item.title %>,
+      <br>
+      Price:<%= item.price %>,</p>
     <%= link_to "Remove item", remove_item_path(id: item.id), :method=> :post %>
   <% end %>
-   <h3>Total:<%= @total_price %></h3>
+  <h3>Total:<%= @total_price %></h3>
 <% end %>
 
 <%= link_to "Return to shop", items_path %>
