@@ -1,14 +1,74 @@
-<h1>Admins#dashboard</h1>
-<p>Find me in app/views/admins/dashboard.html.erb</p>
+<section id="cart-show" class="module">
+  <div id="cart-content" class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 center">
+          <h1 class="text-center">Orders history BITCH</h1>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 centered">
 
-<h1>Orders history:</h1>
+          <form method="post">
+            <div class="table-responsive">
+              <table class="table cart-table">
+                <thead>
+                  <tr>
+                    <th class="col-title">User email</th>
+                    <th class="col-title">Date</th>
+                    <th class="col-price">Total price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if @orders.size == 0 %>
+                    <p>
+                      There are no orders yet, buuuu...
+                    </p>
+                  <% else %>
+                    <% @orders.each do |order| %>
+                      <tr>
+                        <td>
+                          <h6 class="m-b-0">
+                            <a href="#"><%= order.user.email %></a>
+                          </h6>
+                        </td>
+                        <td><%= order.created_at %>
+                        </td>
+                        <td class="m-b-0">
+                          <p><%= order.total_price %> €</p>
+                        </td>
+                      </tr>
+
+                    <% end %>
+                  <% end %>
+
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<br><br><br><br>
+
+<h1>CODE NICO :</h1>
 
 <% @orders.each do |order| %>
   <h3><%= order.user.email %></h3><br>
   <h3><%= order.created_at %></h3><br>
   <% order.items.each do |item| %>
-    Title: <%= item.title %><br>
-    Price: <%= item.price %><br>
-      <% end %><br>
-    Total: <%= order.total_price %>
+    Title:
+    <%= item.title %><br>
+    Price:
+    <%= item.price %><br>
+  <% end %><br>
+  Total:
+  <%= order.total_price %>
 <% end %>

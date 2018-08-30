@@ -5,4 +5,9 @@
   </head>
   <body>
     <h1>Bonjour, merci pour votre commande</h1>
-    <p>
+     
+     <p>  <%  @items.each do |item| %>
+    <img src="<%= item.image_url  %>">
+     <% end %>
+     </p>
+    
