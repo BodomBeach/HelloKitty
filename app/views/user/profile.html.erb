@@ -1,0 +1,6 @@
+<h1>User#profile</h1>
+<p>Find me in app/views/user/profile.html.erb</p>
+<% @cart.items.uniq.each do |item| %>
+    <p>Name:<%= item.title %>, <br> Price:<%= item.price %>,</p><br>
+  <% end %>
+   <h3>Total:<%= @total_price %></h3>
