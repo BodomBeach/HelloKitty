@@ -7,7 +7,8 @@
   <h3><%= order.user.email %></h3><br>
   <h3><%= order.created_at %></h3><br>
   <% order.items.each do |item| %>
-    <%= item.title %><br>
-    <%= item.price %><br>
-  <% end %><br>
+    Title: <%= item.title %><br>
+    Price: <%= item.price %><br>
+      <% end %><br>
+    Total: <%= order.total_price %>
 <% end %>
