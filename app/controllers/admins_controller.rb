@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+
   def dashboard
     @orders =  Order.all.sort_by {|order| order.created_at}
     if !current_user.admin?
@@ -6,4 +7,5 @@ class AdminsController < ApplicationController
       flash.now[:notice] = "You are not an admin, go away"
     end
   end
+
 end
