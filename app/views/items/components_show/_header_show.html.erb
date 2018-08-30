@@ -1,0 +1,21 @@
+<!-- Page product Header-->
+<section id="header-product" class="module-page-title bg-gray">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="page-title-desc">
+          <h1 id="header-product-title" class="page-title-heading"><%= @item.title  %></h1>
+          <!--p This theme will shake your world.-->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to("Home", home_path , id: "header-product-font") %></li>
+          <li class="breadcrumb-item"><%= link_to("Shop", items_path , id: "header-product-font") %></li>
+          <li class="breadcrumb-item active"><%= @item.title %></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Page product Header end-->

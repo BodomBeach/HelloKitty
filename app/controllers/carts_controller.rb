@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   def show
     get_cart
-    @total_price = total_price
+    @total_price = @cart.total_price
   end
 
   def add_item
@@ -13,12 +13,8 @@ class CartsController < ApplicationController
 
   def remove_item
     get_cart
-    @cart.items.delete(Item.find(params[:id]))
+    @cart.items.first{ |i| i.id == params[:id] }.destroy
     redirect_to cart_show_path
-  end
-
-  def total_price
-     @cart.items.to_a.sum { |item| item.price }
   end
 
   private

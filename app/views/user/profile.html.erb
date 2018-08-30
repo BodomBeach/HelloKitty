@@ -1,0 +1,78 @@
+<section id="order-show" class="module">
+  <div id="order-content" class="container">
+  <div class="container">
+        <h1 class="text-center">Your orders</h1>
+  </div>
+  <br>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12 centered">
+
+        <form method="post">
+          <div class="table-responsive">
+            <table class="table cart-table">
+              <thead>
+                <tr>
+                  <th class="col-thumbnail">Product</th>
+                  <th class="col-title"></th>
+                  <th class="col-price">Price</th>
+<!--                   <th class="col-quantity">Quantity</th>
+                  <th class="col-subtotal">Total</th> -->
+                  <th class="col-remove"></th>
+                </tr>
+              </thead>
+              <tbody>
+
+              <% if @cart.items.size == 0 %>
+              <p>
+                There are no items in your cart
+              </p>
+
+              <% else %>
+                <% @cart.items.each do |item| %>
+
+                <tr>
+                  <td>
+                    <a href="#"><img class="cart-thumbnail" src="assets/images/shop/1.jpg" alt=""></a>
+                  </td>
+                  <td>
+                    <h6 class="m-b-0">
+                      <a href="#"><%= item.title %></a>
+                    </h6>
+                  </td>
+                  <!-- <td><%= item.price %> €</td>
+                  <td>
+                    <input class="form-control" type="number" step="1" min="1" value="1">
+                  </td> -->
+                  <!-- AJAX I guess so price = item price * nb of items -->
+                  <td><%= item.price %> €
+                  </td>
+                </tr>
+
+                <% end %>
+              <% end %>
+
+
+
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row m-t-70">
+      <div class="col-md-12">
+        <table class="table cart-table">
+          <tbody>
+            <tr>
+              <td>Total</td>
+              <td class="text-right"><%= @total_price %> €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>

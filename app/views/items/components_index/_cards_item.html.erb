@@ -1,0 +1,33 @@
+<!-- Shop Grid-->
+<section class="module" id="items">
+  <div class="container">
+    <div class="row">
+      <% @items.each do |item| %>
+        <div class="col-md-4">
+          <div class="shop-grid-item">
+            <div class="shop-item-thumb"><a href="<%= item_path(item.id) %>"><img src="<%= item.image_url %>"></a>
+              <div class="shop-item-hidden"><%= link_to "Feed this cat", add_item_path(id: item.id), :method => :post, class: "btn btn-new-white" %>
+              </div>
+            </div>
+            <div class="shop-item-captions">
+              <h6 class="shop-item-title"><%= item.title %></h6><span class="shop-item-price">$<%= item.price %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="space" data-MY="40px"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= will_paginate @items %>
+        </div>
+      </div>
+
+  </div>
+</section>
+<!-- Shop Grid end-->
