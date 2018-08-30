@@ -12,8 +12,9 @@ gem 'faker'
 gem 'will_paginate-bootstrap4'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'coffee-rails', '~> 4.2'
-gem 'sass-rails'
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2.0'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
