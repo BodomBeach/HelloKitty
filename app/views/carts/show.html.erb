@@ -96,6 +96,11 @@
     <p>Name:<%= item.title %>,
       <br>
       Price:<%= item.price %>,</p>
+
+  <% @cart.items.uniq.each do |item| %>
+    <p>Name:<%= item.title %>, <br> Price:<%= item.price %>,</p><br><%= @cart.items.filter %>
+    <h2><%= link_to "+", add_item_path(id: item.id), :method=> :post %></h2>
+
     <%= link_to "Remove item", remove_item_path(id: item.id), :method=> :post %>
   <% end %>
   <h3>Total:<%= @total_price %></h3>
