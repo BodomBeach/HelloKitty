@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
- def order_email(user)
-     mail(from: "hugopayetsync@gmail.com", to: user,
+ def order_email(user, items)
+ 	@items = items
+    mail(from: "hugopayetsync@gmail.com", to: user,
           subject: "Votre commande")
 
  end

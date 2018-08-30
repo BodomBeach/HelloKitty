@@ -5,7 +5,6 @@ class CartsController < ApplicationController
   end
 
   def add_item
-
     get_cart
     @cart.items << Item.find(params[:id])
     flash.now[:notice] = "Item added to your cart"
@@ -19,7 +18,7 @@ class CartsController < ApplicationController
   end
 
   def total_price
-    @cart.items.to_a.sum { |item| item.price }
+     @cart.items.to_a.sum { |item| item.price }
   end
 
   private
@@ -32,5 +31,7 @@ class CartsController < ApplicationController
       @cart = current_cart
     end
   end
+
+
 
 end
