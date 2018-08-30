@@ -30,7 +30,7 @@ $(document).ready(function() {
      $('.pagination a').attr('data-remote', 'true')
    });
 
-  $("#items").html('<%=  escape_javascript(render :partial => 'components/cards_item') %>');
+  $("#items").html('<%=  escape_javascript(render :partial => 'components_index/cards_item') %>');
   $('.pagination a').attr('data-remote', 'true');
 
 });

@@ -6,7 +6,7 @@
         <div class="col-md-4">
           <div class="shop-grid-item">
             <div class="shop-item-thumb"><a href="<%= item_path(item.id) %>"><img src="<%= item.image_url %>"></a>
-              <div class="shop-item-hidden"><a class="btn btn-new-white" href="#">Add to cart</a>
+              <div class="shop-item-hidden"><%= link_to "Feed this cat", add_item_path(id: item.id), :method => :post, class: "btn btn-new-white" %>
               </div>
             </div>
             <div class="shop-item-captions">

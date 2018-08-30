@@ -12,14 +12,17 @@
                  Check your profile & settings here</p>
 
                  <div class="list-group">
-                    <%= link_to "My orders", root_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
+                    <%= link_to "My orders", profile_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
                     <%= link_to "My settings", edit_user_registration_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
                     <%= link_to "Log out", destroy_user_session_path, method: :delete, class:  "list-group-item list-group-item-action list-group-item-light"%>
+                    <% if current_user.admin? %>
+                      <%= link_to "Admin dashboard", admin_path, class: "list-group-item list-group-item-action list-group-item-light"%>
+                    <% end %>
                   </div>
                <% else %>
                  <div class="list-group">
-                    <a href="<%= new_user_session_path %>" class="list-group-item list-group-item-action list-group-item-light">Log in</a>
-                    <a href="<%= new_user_registration_path %>" class="list-group-item list-group-item-action list-group-item-light">Sign in</a>
+                    <%= link_to "Log in", new_user_session_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
+                    <%= link_to "Sign up", new_user_registration_path, class:  "list-group-item list-group-item-action list-group-item-light"%>
                   </div>
                 <% end %>
               </div>

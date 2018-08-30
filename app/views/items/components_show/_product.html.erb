@@ -1,0 +1,41 @@
+<!-- Product-->
+<section class="module">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="shop-single-item-photos">
+                    <%= image_tag(@item.image_url, class: "shop-single-item-popup") %>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="shop-single-item">
+                    <h2 class="shop-single-item-title"><%= @item.title %></h2><br>
+                    <h2 class="shop-single-item-price">$<%= @item.price %></h2>
+                    <div class="shop-single-item-description">
+                        <p><%= @item.description %></p>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input class="form-control" type="number" value="1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6"><%= link_to "Feed this cat", add_item_path(id: @item.id), :method => :post, class: "btn btn-block btn-warning" %></div>
+                    </div>
+                    <hr class="m-t-30 m-b-30">
+
+                    <!-- Social Icons-->
+                    <div class="info-list">
+                        <li><span class="info-list-title">Share:</span><span>
+                                <ul class="social-icons">
+                                    <li><a href="https://twitter.com/RealGrumpyCat?lang=fr"><i class="ti-twitter"></i></a></li>
+                                    <li><a href="https://www.instagram.com/cats/"><i class="ti-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/this.is.cats.world/"><i class="ti-pinterest"></i></a></li>
+                                </ul></span></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product end-->
