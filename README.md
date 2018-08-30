@@ -26,10 +26,10 @@ bundle install --without production && rails db:migrate si tu n'as pas postgre s
 * Projet
 
 #### Front
-A été intégrée à l'application le template Bootstrap **'Boomerang'**, bricolé par la team front pour le plaisir de vos globes oculaires.
+A été intégré à l'application le template Bootstrap **'Boomerang'**, bricolé par la team front pour le plaisir de vos globes oculaire.
 
 #### Opérations marketing
-Le but est de cibler des personnes (françaises) potentiellement **teubé** ou amoureuse des chats. Les escroquer, faire des thunes!
+Le but est de cibler des personnes (française) potentiellement **teubé** ou amoureuse des chats. Les escroquer, faire des thunes!
 
 #### La team
 Ce projet a été réalisé avec passion, humour, **cyprine** et excellence par :
@@ -41,5 +41,5 @@ Le parisien égaré : Félix Gaudet
 
 Nous tenons à préciser que nous avons kiffé la vie pendant ce projet grâce la délicieuse présence de nos amis : Jérémy Rak, Gaëlle Gorgoni, Titouax Furax!
 
-Si vous avez lue tout ce README, c'est que vus allez être un correcteur putain de **chiant**, so please just fuck off!
-Bonne corrections les amis kissing_heart.
+Si vous avez lue tout ce README, c'est que vous allez être un correcteur putain de **chiant**, so please just fuck off!
+Bonne correction les amis kissing_heart.
