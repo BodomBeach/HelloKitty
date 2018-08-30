@@ -8,7 +8,10 @@
 
 require 'faker'
 
+User.destroy_all
 Item.destroy_all
+Cart.destroy_all
+
 i = 1
 
 100.times do
@@ -18,3 +21,6 @@ i = 1
               image_url: ("https://loremflickr.com/640/427/cat?lock=#{i}"))
   i += 1
 end
+
+admin = User.create! :email => 'admin@admin', :password => 'admins', :password_confirmation => 'admins'
+admin.update_attribute :admin, true
