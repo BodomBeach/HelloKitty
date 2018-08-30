@@ -26,12 +26,12 @@
 
 
 $(document).ready(function() {
-   $(function(){
-     $('.pagination a').attr('data-remote', 'true')
-   });
+  //  $(function(){
+  //    $('.pagination a').attr('data-remote', 'true')
+  //  });
 
-  var partial = "<%=  escape_javascript(render :partial => 'cards_item') %>";
-  $("#items").html(partial);
-  $('.pagination a').attr('data-remote', 'true');
+  // var partial = "<%=  escape_javascript(render :partial => 'cards_item') %>";
+  // $("#items").html(partial);
+  // $('.pagination a').attr('data-remote', 'true');
 
 });
