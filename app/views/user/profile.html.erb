@@ -23,14 +23,14 @@
               </thead>
               <tbody>
 
-              <% if @cart.items.size == 0 %>
+              <% if @orders.size == 0 %>
               <p>
-                There are no items in your cart
+                There are no orders
               </p>
 
               <% else %>
-                <% @cart.items.each do |item| %>
-
+              <% @orders.each do |order| %>
+                <% order.items.each do |item| %>
                 <tr>
                   <td>
                     <a href="#"><img class="cart-thumbnail" src="assets/images/shop/1.jpg" alt=""></a>
@@ -43,10 +43,10 @@
                   <td><%= item.price %> €
                   </td>
                 </tr>
-
                 <% end %>
+                <tr><td><h4>Total : <%= order.total_price %> €</h4></td></tr>
               <% end %>
-
+            <% end %>
 
 
               </tbody>
