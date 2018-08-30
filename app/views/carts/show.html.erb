@@ -22,6 +22,7 @@
                   <th class="col-price">Price</th>
                   <th class="col-quantity"></th>
                   <th class="col-quantity"></th>
+                  <th class="col-quantity">Quantity</th>
                 </tr>
               </thead>
               <tbody>
@@ -36,11 +37,12 @@
 
                 <tr>
                   <td>
-                    <a href="#"><img class="cart-thumbnail" src="assets/images/shop/1.jpg" alt=""></a>
+                    <%= image_tag(item.image_url, class: "cart-thumbnail") %>
+                    <img class="cart-thumbnail" src="assets/images/shop/1.jpg" alt="">
                   </td>
                   <td>
                     <h6 class="m-b-0">
-                      <a href="#"><%= item.title %></a>
+                      <%= link_to(item.title, item_path(item.id)) %>
                     </h6>
                   </td>
 

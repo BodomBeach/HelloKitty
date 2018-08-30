@@ -16,8 +16,8 @@
                   <th class="col-thumbnail">Product</th>
                   <th class="col-title"></th>
                   <th class="col-price">Price</th>
-<!--                   <th class="col-quantity">Quantity</th>
-                  <th class="col-subtotal">Total</th> -->
+                  <th class="col-quantity">Quantity</th>
+                  <th class="col-subtotal">Total</th>
                   <th class="col-remove"></th>
                 </tr>
               </thead>
@@ -29,7 +29,7 @@
               </p>
 
               <% else %>
-                <% @cart.items.each do |item| %>
+                <% @cart.items.uniq.each  do |item| %>
 
                 <tr>
                   <td>
@@ -40,11 +40,13 @@
                       <a href="#"><%= item.title %></a>
                     </h6>
                   </td>
-                  <!-- <td><%= item.price %> €</td>
+                  <td><%= item.price %> €</td>
                   <td>
                     <input class="form-control" type="number" step="1" min="1" value="1">
-                  </td> -->
+                  </td>
                   <!-- AJAX I guess so price = item price * nb of items -->
+                    <%= @cart.items.select{ |i| i.id == item.id }.size %> items
+
                   <td><%= item.price %> €
                   </td>
                 </tr>
