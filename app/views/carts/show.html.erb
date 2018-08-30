@@ -1,6 +1,11 @@
-<section class="module">
+<section id="cart-show" class="module">
+  <div id="cart-content"class="container">
   <div class="container">
+    <div class="row">
+      <div class="col-md-12 center">
         <h1 class="text-center">Shopping Cart</h1>
+      </div>
+    </div>
   </div>
   <br>
   <div class="container">
@@ -15,8 +20,8 @@
                   <th class="col-thumbnail">Product</th>
                   <th class="col-title"></th>
                   <th class="col-price">Price</th>
-                  <th class="col-quantity">Quantity</th>
-                  <th class="col-subtotal">Total</th>
+<!--                   <th class="col-quantity">Quantity</th>
+                  <th class="col-subtotal">Total</th> -->
                   <th class="col-remove"></th>
                 </tr>
               </thead>
@@ -39,10 +44,10 @@
                       <a href="#"><%= item.title %></a>
                     </h6>
                   </td>
-                  <td><%= item.price %> €</td>
+                  <!-- <td><%= item.price %> €</td>
                   <td>
                     <input class="form-control" type="number" step="1" min="1" value="1">
-                  </td>
+                  </td> -->
                   <!-- AJAX I guess so price = item price * nb of items -->
                   <td><%= item.price %> €
                   </td>
@@ -80,12 +85,11 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
-<br><br><br>
-
-<!-- <h1>CODE NICO</h1>
-
+<!-- <h1>CODE NICO</h1> -->
+<!--
 <% if @cart.items.size == 0 %>
 
   <p>
@@ -96,6 +100,7 @@
     <p>Name:<%= item.title %>,
       <br>
       Price:<%= item.price %>,</p>
+  <% end %>
 
   <% @cart.items.uniq.each do |item| %>
     <p>Name:<%= item.title %>, <br> Price:<%= item.price %>,</p><br>
@@ -110,4 +115,5 @@
 <%= link_to "signout", destroy_user_session_path, method: :delete %>
 
 <%= link_to "add item 1", add_item_path(id: 1), :method=> :post %>
-<%= link_to "add item 2", add_item_path(id: 2), :method=> :post %> -->
+<%= link_to "add item 2", add_item_path(id: 2), :method=> :post %>
+ -->

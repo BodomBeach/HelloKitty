@@ -1,0 +1,22 @@
+#cart-show {
+  background-image: url(<%= asset_path 'shop/chat-13.jpg' %>);
+  background-position: cover;
+}
+
+#order-show {
+  background-image: url(<%= asset_path 'shop/chat-15.jpg' %>);
+  background-position: cover;
+
+}
+
+#cart-content, #order-content {
+  padding: 25px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+}
+
+@media (min-width: 1200px) {
+  #cart-content, #order-content {
+    max-width: 600px;
+  }
+}
