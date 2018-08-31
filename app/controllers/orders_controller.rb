@@ -13,12 +13,11 @@ class OrdersController < ApplicationController
 
   def complete
   	@order = Order.new(user_id: current_user.id)
-    current_user.cart.items.each do |item|
+    @order.items = current_user.cart.items.each do |item|
     	@order.items << item
     end
     @order.save
-
-
+    current_user.cart.carts_items.destroy_all
   end
 
 end
