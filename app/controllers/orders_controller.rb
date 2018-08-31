@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
   	if current_user.nil?
      redirect_to new_user_registration_path
@@ -10,7 +12,6 @@ class OrdersController < ApplicationController
   end
 
 
-
   def complete
   	@order = Order.new(user_id: current_user.id)
     @order.items = current_user.cart.items.each do |item|
@@ -18,11 +19,10 @@ class OrdersController < ApplicationController
     end
     @order.save
 
-   flash[:notice] = "Thank you for your purchase"
-   redirect_to home_path
+    flash[:notice] = "Thank you for your purchase"
+    redirect_to home_path
 
     current_user.cart.carts_items.destroy_all
-
   end
 
 end

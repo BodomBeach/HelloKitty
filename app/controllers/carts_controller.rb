@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+
   def show
     get_cart
     @total_price = @cart.total_price
@@ -27,7 +28,5 @@ class CartsController < ApplicationController
       @cart = current_cart
     end
   end
-
-
 
 end

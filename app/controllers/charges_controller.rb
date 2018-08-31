@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     get_cart
     @total = @cart.items.to_a.sum { |item| item.price }
