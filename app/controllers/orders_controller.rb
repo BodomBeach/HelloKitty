@@ -17,9 +17,11 @@ class OrdersController < ApplicationController
     	@order.items << item
     end
     @order.save
+
+   flash[:notice] = "Thank you for your purchase"
+   redirect_to home_path
+
     current_user.cart.carts_items.destroy_all
-    flash[:notice] = "Thank you for your purchase"
-    redirect_to home_path
 
   end
 
