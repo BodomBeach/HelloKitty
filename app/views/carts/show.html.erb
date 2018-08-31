@@ -82,24 +82,26 @@
             </tbody>
           </table>
           <div class="text-right">
-<!--           	<%= button_to "Proceed to checkout", order_path, method: :get, class: 'btn btn-block-mobile btn-black' %>
- -->            <%= form_tag charges_path do %>
-              <article>
-                <% if flash[:error].present? %>
-                  <div id="error_explanation">
-                    <p><%= flash[:error] %></p>
-                  </div>
-                <% end %>
-              </article>
-
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-description="Yay you just feed a cat !"
-                      data-amount="<%= @pay %>"
-                      data-locale="auto"
-                      data-currency="eur"></script>
+            <% if user_signed_in? %>
+             <%= form_tag charges_path do %>
+                <article>
+                  <% if flash[:error].present? %>
+                    <div id="error_explanation">
+                      <p><%= flash[:error] %></p>
+                    </div>
+                  <% end %>
+                </article>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-description="Yay you just feed a cat !"
+                        data-amount="<%= @pay %>"
+                        data-locale="auto"
+                        data-currency="eur">
+                </script>
+              <% end %>
+            <% else %>
+              <%= button_to "Sign in to checkout", new_user_session_path, method: :get, class: 'btn btn-block-mobile btn-black' %>
             <% end %>
-
           </div>
         </div>
       </div>
