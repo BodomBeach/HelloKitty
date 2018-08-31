@@ -25,7 +25,7 @@
 
                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                          data-description="A month's subscription"
+                          data-description="Yay you're the best !"
                           data-amount="<%= @pay %>"
                           data-locale="auto"
                           data-currency="eur"></script>
@@ -35,24 +35,3 @@
     </div>
 </section>
 <!-- Checkout end-->
-
-
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span style="text-align: center;">Montant: <%="#{@total}€"%></span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= @pay %>"
-          data-locale="auto"
-          data-currency="eur"></script>
-<% end %>
