@@ -17,7 +17,7 @@ bundle install --without production && rails db:migrate si tu n'as pas postgre s
 * Mais pour des raisons de clés d'API et de configuration action_mailer, je vous conseille davantage de vous tourner vers la deuxième proposition...
 
 #### Sur heroku
-...Rendez-vous donc sur 
+...Rendez-vous donc sur https://hello-kitty.herokuapp.com
 
 #### L'application
 * Ruby on Rails
