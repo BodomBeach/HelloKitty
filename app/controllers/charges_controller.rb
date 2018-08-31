@@ -36,8 +36,8 @@ class ChargesController < ApplicationController
 
    UserMailer.order_email(params[:stripeEmail], @cart.items).deliver_now!
    UserMailer.admin_order_email(params[:stripeEmail],@amount_view).deliver_now!
-   flash[:notice] = "Thank you for your purchase"
-  redirect_to home_path
+   
+  redirect_to order_complete_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

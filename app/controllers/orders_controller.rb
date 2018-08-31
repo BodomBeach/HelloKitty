@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
      redirect_to new_user_registration_path
      flash[:notice] = "Please sign up to buy cats"
     else
-	 redirect_to new_charge_path
+	  redirect_to new_charge_path
     end
   end
 
@@ -18,6 +18,9 @@ class OrdersController < ApplicationController
     end
     @order.save
     current_user.cart.carts_items.destroy_all
+    flash[:notice] = "Thank you for your purchase"
+    redirect_to home_path
+
   end
 
 end
