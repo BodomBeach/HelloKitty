@@ -1,3 +1,42 @@
+<!-- Checkout-->
+<section class="module">
+    <div class="container">
+        <div  id="stripe"  class="row m-t-70">
+            <div class="col-md-8 m-auto">
+                <div class="heading-underline">
+                    <h5 class="m-b-30">Order Summary</h5>
+                </div>
+                 <table class="table cart-table">
+                    <tbody>
+                      <%= form_tag charges_path do %>
+                        <article>
+                          <% if flash[:error].present? %>
+                            <div id="error_explanation">
+                              <p><%= flash[:error] %></p>
+                            </div>
+                          <% end %>
+                        </article>
+                        <tr>
+                          <td>Total</td>
+                          <td class="text-right"><%="#{@total}€"%></td>
+                        </tr>
+                    </tbody>
+                  </table>
+
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                          data-description="A month's subscription"
+                          data-amount="<%= @pay %>"
+                          data-locale="auto"
+                          data-currency="eur"></script>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Checkout end-->
+
+
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -6,7 +45,7 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Montant: <%="#{@total}€"%></span>
+      <span style="text-align: center;">Montant: <%="#{@total}€"%></span>
     </label>
   </article>
 
@@ -17,4 +56,3 @@
           data-locale="auto"
           data-currency="eur"></script>
 <% end %>
-

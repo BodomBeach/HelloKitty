@@ -31,47 +31,36 @@
               <% else %>
 
               <% @orders.each do |order| %>
-                <% order.items.each do |item| %>
+                <% order.items.uniq.each do |item| %>
                 <tr>
                   <td>
-                    <a href="#"><img class="cart-thumbnail" src="assets/images/shop/1.jpg" alt=""></a>
+                    <%= image_tag(item.image_url, class: "cart-thumbnail") %>
                   </td>
                   <td>
                     <h6 class="m-b-0">
-                      <a href="#"><%= item.title %></a>
+                      <%= item.title %>
                     </h6>
                   </td>
                   <td><%= item.price %> €</td>
                   <td>
-                    <input class="form-control" type="number" step="1" min="1" value="1">
+                    <p><%= order.items.select{ |i| i.id == item.id }.size %></p>
                   </td>
                   <!-- AJAX I guess so price = item price * nb of items -->
-                    <%= @cart.items.select{ |i| i.id == item.id }.size %> items
+
                   <td><%= item.price %> €
                   </td>
                 </tr>
                 <% end %>
-                <tr><td><h4>Total : <%= order.total_price %> €</h4></td></tr>
+                 <tr>
+                  <td><h4>Total</h5></td>
+                  <td class="text-right"><h5><%= order.total_price %> €</h5></td>
+                  </tr>
+                <% end %>
               <% end %>
-            <% end %>
-
-
               </tbody>
             </table>
           </div>
         </form>
-      </div>
-    </div>
-    <div class="row m-t-70">
-      <div class="col-md-12">
-        <table class="table cart-table">
-          <tbody>
-            <tr>
-              <td>Total</td>
-              <td class="text-right"><%= @total_price %> €</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
