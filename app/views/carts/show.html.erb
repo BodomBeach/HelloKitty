@@ -49,10 +49,10 @@
                       <%= item.price %> €
                     </td>
                     <td class="cart-remove">
-                      <%= link_to '', add_item_path(id: item.id), :method => :post, class: "far fa-plus-square" %>
+                      <h5><%= link_to '+', add_item_path(id: item.id), :method => :post %></h5>
                     </td>
                     <td class="cart-remove">
-                      <h5><%= link_to '', remove_item_path(id: item.id), :method => :post, class: "far fa-minus-square" %></h5>
+                      <h5><%= link_to '-', remove_item_path(id: item.id), :method => :post %></h5>
                     </td>
                     <td>
                       <%= @cart.items.select{ |i| i.id == item.id }.size %> items
@@ -82,7 +82,24 @@
             </tbody>
           </table>
           <div class="text-right">
-          	<%= button_to "Proceed to checkout", order_path, method: :get, class: 'btn btn-block-mobile btn-black' %>
+<!--           	<%= button_to "Proceed to checkout", order_path, method: :get, class: 'btn btn-block-mobile btn-black' %>
+ -->            <%= form_tag charges_path do %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
+
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="Yay you just feed a cat !"
+                      data-amount="<%= @pay %>"
+                      data-locale="auto"
+                      data-currency="eur"></script>
+            <% end %>
+
           </div>
         </div>
       </div>
